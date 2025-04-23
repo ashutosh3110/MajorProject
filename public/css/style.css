@@ -134,7 +134,7 @@
     display:flex;
     flex-wrap: wrap;
     align-items: center;
-    width: 1600px;
+    /* width: 1600px; */
     
 }
 .filter{
