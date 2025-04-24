@@ -12,54 +12,79 @@
         display:flex;
         align-items: center;
     }
+    #filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .filter {
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .form-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
   </style>
-    <div class="container">
-        <div id="filters" class="d-flex flex-wrap align-items-center gap-3">
-          <!-- Filters -->
-          <div class="filter" data-category="Trending">
-            <div class="icon"><i class="fa-solid fa-fire"></i></div>
-            <p>Trending</p>
-          </div>
-          <div class="filter" data-category="Rooms">
-            <div class="icon"><i class="fa-solid fa-bed"></i></div>
-            <p>Rooms</p>
-          </div>
-          <div class="filter" data-category="Iconic Cities">
-            <div class="icon"><i class="fa-solid fa-mountain-city"></i></div>
-            <p>Iconic Cities</p>
-          </div>
-          <div class="filter" data-category="Mountains">
-            <div class="icon"><i class="fa-solid fa-mountain"></i></div>
-            <p>Mountains</p>
-          </div>
-          <div class="filter" data-category="Castles">
-            <div class="icon"><i class="fa-brands fa-fort-awesome"></i></div>
-            <p>Castles</p>
-          </div>
-          <div class="filter" data-category="Arctics">
-            <div class="icon"><i class="fa-solid fa-snowflake"></i></div>
-            <p>Arctics</p>
-          </div>
-          <div class="filter" data-category="Camping">
-            <div class="icon"><i class="fa-solid fa-campground"></i></div>
-            <p>Camping</p>
-          </div>
-          <div class="filter" data-category="Farms">
-            <div class="icon"><i class="fa-solid fa-cow"></i></div>
-            <p>Farms</p>
-          </div>
-          <div class="filter" data-category="Amazing Pools">
-            <div class="icon"><i class="fa-solid fa-person-swimming"></i></div>
-            <p>Amazing Pools</p>
-          </div>
-      
-          <!-- Toggle Switch -->
-          <div class="form-check form-switch form-check-reverse">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckReverse">
-            <label class="form-check-label" for="flexSwitchCheckReverse">Display total after Taxes</label>
-          </div>
-        </div>
+   <div class="container">
+    <div id="filters">
+      <!-- Filters -->
+      <div class="filter" data-category="Trending">
+        <div class="icon"><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
       </div>
+      <div class="filter" data-category="Rooms">
+        <div class="icon"><i class="fa-solid fa-bed"></i></div>
+        <p>Rooms</p>
+      </div>
+      <div class="filter" data-category="Iconic Cities">
+        <div class="icon"><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic Cities</p>
+      </div>
+      <div class="filter" data-category="Mountains">
+        <div class="icon"><i class="fa-solid fa-mountain"></i></div>
+        <p>Mountains</p>
+      </div>
+      <div class="filter" data-category="Castles">
+        <div class="icon"><i class="fa-brands fa-fort-awesome"></i></div>
+        <p>Castles</p>
+      </div>
+      <div class="filter" data-category="Arctics">
+        <div class="icon"><i class="fa-solid fa-snowflake"></i></div>
+        <p>Arctics</p>
+      </div>
+      <div class="filter" data-category="Camping">
+        <div class="icon"><i class="fa-solid fa-campground"></i></div>
+        <p>Camping</p>
+      </div>
+      <div class="filter" data-category="Farms">
+        <div class="icon"><i class="fa-solid fa-cow"></i></div>
+        <p>Farms</p>
+      </div>
+      <div class="filter" data-category="Amazing Pools">
+        <div class="icon"><i class="fa-solid fa-person-swimming"></i></div>
+        <p>Amazing Pools</p>
+      </div>
+  
+      <!-- Toggle in same line -->
+      <div class="form-check form-switch form-check-reverse">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckReverse">
+        <label class="form-check-label" for="flexSwitchCheckReverse">Display total after Taxes</label>
+      </div>
+    </div>
+  </div>
         <div id="back-to-all-btn" style="display: none; padding:2rem; ">
             <button onclick="window.location.href='/listing'" class="btn-success" style="padding:0.5rem 0.3rem 0.5rem 0.3rem; border-radius:1.2rem;margin-left:0rem">Home Page</button>
           </div>
