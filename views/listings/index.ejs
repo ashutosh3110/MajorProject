@@ -12,12 +12,19 @@
         display:flex;
         align-items: center;
     }
-    #filters {
+    #filters-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .filters-container {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     gap: 1rem;
-    padding: 1rem 0;
+    flex: 1;
   }
 
   .filter {
@@ -33,10 +40,22 @@
   }
 
   .form-switch {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    white-space: nowrap;
+    margin-left: auto;
   }
+
+  @media(max-width: 768px) {
+    #filters-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .form-switch {
+      margin-left: 0;
+    }
+  }
+  
+  
   </style>
  <div class="container">
     <div id="filters-wrapper">
