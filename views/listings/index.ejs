@@ -13,52 +13,50 @@
         align-items: center;
     }
   </style>
-     <div class="container">
-        <div id="filters" class="row g-3">
-          <!-- Categories -->
-          <div class="filter col-6 col-sm-4 col-md-3 col-lg-1" data-category="Trending">
+    <div class="container">
+        <div id="filters" class="d-flex flex-wrap align-items-center gap-3">
+          <!-- Filters -->
+          <div class="filter" data-category="Trending">
             <div class="icon"><i class="fa-solid fa-fire"></i></div>
             <p>Trending</p>
           </div>
-          <div class="filter col-6 col-sm-4 col-md-3 col-lg-1" data-category="Rooms">
+          <div class="filter" data-category="Rooms">
             <div class="icon"><i class="fa-solid fa-bed"></i></div>
             <p>Rooms</p>
           </div>
-          <div class="filter col-6 col-sm-4 col-md-3 col-lg-1" data-category="Iconic Cities">
+          <div class="filter" data-category="Iconic Cities">
             <div class="icon"><i class="fa-solid fa-mountain-city"></i></div>
             <p>Iconic Cities</p>
           </div>
-          <div class="filter col-6 col-sm-4 col-md-3 col-lg-1" data-category="Mountains">
+          <div class="filter" data-category="Mountains">
             <div class="icon"><i class="fa-solid fa-mountain"></i></div>
             <p>Mountains</p>
           </div>
-          <div class="filter col-6 col-sm-4 col-md-3 col-lg-1" data-category="Castles">
+          <div class="filter" data-category="Castles">
             <div class="icon"><i class="fa-brands fa-fort-awesome"></i></div>
             <p>Castles</p>
           </div>
-          <div class="filter col-6 col-sm-4 col-md-3 col-lg-1" data-category="Arctics">
+          <div class="filter" data-category="Arctics">
             <div class="icon"><i class="fa-solid fa-snowflake"></i></div>
             <p>Arctics</p>
           </div>
-          <div class="filter col-6 col-sm-4 col-md-3 col-lg-1" data-category="Camping">
+          <div class="filter" data-category="Camping">
             <div class="icon"><i class="fa-solid fa-campground"></i></div>
             <p>Camping</p>
           </div>
-          <div class="filter col-6 col-sm-4 col-md-3 col-lg-1" data-category="Farms">
+          <div class="filter" data-category="Farms">
             <div class="icon"><i class="fa-solid fa-cow"></i></div>
             <p>Farms</p>
           </div>
-          <div class="filter col-6 col-sm-4 col-md-3 col-lg-1" data-category="Amazing Pools">
+          <div class="filter" data-category="Amazing Pools">
             <div class="icon"><i class="fa-solid fa-person-swimming"></i></div>
             <p>Amazing Pools</p>
           </div>
       
-          <!-- Switch Toggle -->
-          <div class="col-1">
-            <div class="form-check form-switch form-check-reverse">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckReverse">
-              <label class="form-check-label" for="flexSwitchCheckReverse">Display total after Taxes</label>
-            </div>
+          <!-- Toggle Switch -->
+          <div class="form-check form-switch form-check-reverse">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckReverse">
+            <label class="form-check-label" for="flexSwitchCheckReverse">Display total after Taxes</label>
           </div>
         </div>
       </div>
