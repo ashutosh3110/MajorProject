@@ -3,7 +3,7 @@ const initData=require("./data.js");
 const listing=require("../models/listing.js");
 require('dotenv').config()
 
-//  const MONGO_URL="mongodb://127.0.0.1:27017/wanderlust";
+  const MONGO_URL="mongodb://127.0.0.1:27017/wanderlust";
 
 const dbUrl=process.env.atlasDb_Url;
 main()
@@ -15,7 +15,7 @@ main()
 })
 
 async function main() {
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(MONGO_URL);
     
 }
 
