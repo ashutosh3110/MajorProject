@@ -1,0 +1,26 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-5">
+  <h2>Your Bookings</h2>
+  
+  <% if (bookings.length === 0) { %>
+    <p>You haven't made any bookings yet.</p>
+  <% } else { %>
+    <% bookings.forEach(booking => { %>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title"><%= booking.property.title %></h5>
+          <p class="card-text">
+            <strong>Username:</strong> <%= booking.username %><br/>
+            <strong>Location:</strong> <%= booking.property.location %><br/>
+            <strong>Check-In:</strong> <%= booking.checkIn.toDateString() %><br/>
+            <strong>Check-Out:</strong> <%= booking.checkOut.toDateString() %><br/>
+            <strong>Total Nights:</strong> <%= booking.totalNights %><br/>
+            <strong>Total Amount:</strong> ₹<%= booking.totalAmount.toLocaleString("en-IN") %><br/>
+            <strong>Status:</strong> <%= booking.status %>
+          </p>
+        </div>
+      </div>
+    <% }); %>
+  <% } %>
+</div>

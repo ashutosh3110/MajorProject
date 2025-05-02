@@ -9,6 +9,22 @@
   <script async
    src="https://maps.googleapis.com/maps/api/js?key=<%= mapToken %>&callback=initMap">
  </script>
+ <style>
+    .check{
+        display: flex;
+        align-items: center;
+          
+    }
+    .checkOut{
+        margin-left: 7rem;
+    }
+    .checkIn{
+        margin-left: 25rem;
+    }
+    .book{
+        margin-left: 42rem;
+    }
+ </style>
   
    
 
@@ -33,6 +49,19 @@
         </div>
 
         <br>
+        <form action="/booking" method="POST">
+            <input type="hidden" name="propertyId" value="<%= foundListing._id %>">
+          <div class="check">
+            <label for="checkIn" class="checkIn">Check-In:</label>
+            <input type="text" name="checkIn" id="checkIn" class="form-control " style="width: 12rem;"  required>
+          
+            <label for="checkOut" class="checkOut">Check-Out:</label>
+            <input type="text" name="checkOut" id="checkOut" class="form-control " style="width: 12rem;" required>
+        </div>
+            <button type="submit" class="btn btn-primary mt-4 book">Book Now</button>
+          </form>
+          
+         
    <% if(currUser && foundListing.owner._id.equals(currUser._id)) { %>
 
    
@@ -110,5 +139,23 @@
         </div>
         
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const checkOut = flatpickr("#checkOut", {
+            dateFormat: "Y-m-d",
+            minDate: "today",
+          });
+      
+          const checkIn = flatpickr("#checkIn", {
+            dateFormat: "Y-m-d",
+            minDate: "today",
+            onChange: function (selectedDates, dateStr, instance) {
+              checkOut.set("minDate", dateStr);
+            },
+          });
+        });
+      </script>
+      
+      
     
     

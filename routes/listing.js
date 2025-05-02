@@ -40,7 +40,7 @@ router.get("/", async (req, res) => {
 });
 
 
-router.post("/",isLoggedIn,upload.single("image"),(req,res,next)=>{
+ router.post("/",isLoggedIn,upload.single("image"),(req,res,next)=>{
  console.log(req.body);
  console.log(req.file);
  next();
@@ -49,7 +49,7 @@ router.post("/",isLoggedIn,upload.single("image"),(req,res,next)=>{
 
  
 },validateListing, wrapAsync(listingController.createListing))
-// router.post("/",isLoggedIn,upload.single("image"),(req, res) => {
+//  router.post("/",isLoggedIn,(req, res) => {
 //     console.log("🧪 Route hit");
 //     console.log("📦 Body:", req.body);
 //     console.log("🖼 File:", req.file);

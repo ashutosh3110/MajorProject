@@ -24,11 +24,12 @@ const MONGO_URL="mongodb://127.0.0.1:27017/wanderlust";
 const listingRouter=require("./routes/listing.js");
 const reviewRouter=require("./routes/review.js");
 const userRouter=require("./routes/user.js");
+const bookingRoutes = require('./routes/booking.js');
 
- const dbUrl=process.env.atlasDb_Url;
+//  const dbUrl=process.env.atlasDb_Url;
 
 async function main() {
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(MONGO_URL);
     
 }
 
@@ -51,20 +52,20 @@ app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-const store=MongoStore.create({
-  mongoUrl:dbUrl,
-  crypto:{
-    secret:process.env.SECRET,
-  },
-  touchAfter:24*3600
-})
+// const store=MongoStore.create({
+//   mongoUrl:dbUrl,
+//   crypto:{
+//     secret:process.env.SECRET,
+//   },
+//   touchAfter:24*3600
+// })
  
-store.on("error",()=>{
-  console.log("ERROR IN MONGO SESSION STORE",err);
-})
+// store.on("error",()=>{
+//   console.log("ERROR IN MONGO SESSION STORE",err);
+// })
 
 const sessionOption={
-   store,
+  //  store,
     secret:process.env.SECRET,
     resave:false,
     saveUninitialized:true,
@@ -137,6 +138,7 @@ app.get("/fix-coordinates", async (req, res) => {
 app.use("/listing",listingRouter);
 app.use("/listing/:id/reviews",reviewRouter);
 app.use("/",userRouter);
+app.use('/booking', bookingRoutes);
 app.use((req, res, next) => {
     res.setTimeout(10000, () => {
       console.log('Request has timed out.');

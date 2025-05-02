@@ -8,6 +8,7 @@
      flex-direction: column;
      
      min-height: 100vh ;
+      overflow-x: hidden; 
      /* padding-top: 5rem; */
      
  }
@@ -70,7 +71,7 @@
  .listing-card {
      border: none !important;
      margin-bottom: 2rem;
-      position: relative; 
+      /* position: relative;  */
  }
 
  .card-img-top {
@@ -158,8 +159,8 @@
 /* Collapse menu fix on mobile */
 .navbar-collapse {
     background-color: #ffffff;
-     z-index: 1050; 
-     position: absolute; 
+     /* z-index: 1050;  */
+     /* position: absolute;  */
     width: 100%;
     top: 100%;
     left: 0;

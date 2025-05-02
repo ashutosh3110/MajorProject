@@ -59,7 +59,7 @@ module.exports.createListing=async (req, res, next) => {
             
             
         const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 10000); // 10 sec
+        const timeout = setTimeout(() => controller.abort(), 50000); // 10 sec
 
     
         const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(location)}&key=${process.env.MAP_TOKEN}`;
